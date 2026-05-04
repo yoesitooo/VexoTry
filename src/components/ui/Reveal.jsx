@@ -13,6 +13,7 @@ export const Reveal = ({ children, width = "100%" }) => {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+        className="will-change-transform will-change-opacity"
       >
         {children}
       </motion.div>

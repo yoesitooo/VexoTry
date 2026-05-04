@@ -15,28 +15,36 @@ export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
 
-  // Scroll Spy Logic
+  // Scroll Spy Logic - Optimized
   useEffect(() => {
+    let ticking = false;
+    
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-      
-      const sections = document.querySelectorAll('section[id]');
-      let current = '';
-      
-      sections.forEach((section) => {
-        const sectionHeight = section.offsetHeight;
-        const sectionTop = section.offsetTop - 100;
-        const sectionId = section.getAttribute('id');
-        
-        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-          current = sectionId;
-        }
-      });
-      
-      setActiveSection(current);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 50);
+          
+          const sections = document.querySelectorAll('section[id]');
+          let current = '';
+          
+          sections.forEach((section) => {
+            const sectionHeight = section.offsetHeight;
+            const sectionTop = section.offsetTop - 100;
+            const sectionId = section.getAttribute('id');
+            
+            if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+              current = sectionId;
+            }
+          });
+          
+          setActiveSection(current);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -61,10 +69,11 @@ export const Navbar = () => {
             delay: 0.1 
           }}
           className={cn(
-            "relative flex items-center justify-between h-14 px-6 transition-all duration-500 ease-in-out",
-            "bg-slate-950/40 backdrop-blur-2xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)]",
+            "relative flex items-center justify-between h-14 px-6 transition-all duration-500 ease-in-out will-change-[width,max-width,border-radius]",
+            "bg-slate-950/60 backdrop-blur-md border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)]",
             isScrolled ? "w-full max-w-2xl rounded-full" : "w-full max-w-5xl rounded-3xl"
           )}
+          style={{ transform: "translateZ(0)" }}
         >
           {/* Logo */}
           <a href="#" className="flex items-center gap-2 group shrink-0">
