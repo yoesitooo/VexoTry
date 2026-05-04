@@ -1,0 +1,39 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+
+/**
+ * COMPONENTE: HeroBackground
+ * 
+ * Este componente renderiza el fondo optimizado para el Hero Section.
+ * Utiliza placehold.co con una configuración de color específica:
+ * - Fondo: Slate-950 (Azul oscuro casi negro)
+ * - Texto/Acento: Cyan-400 (Azul eléctrico neón)
+ * - Optimización: Lazy loading, blur para performance.
+ */
+const HeroBackground = () => {
+  return (
+    <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+      {/* 
+        Imagen de fondo optimizada desde placehold.co 
+        Configuración: 1920x1080, Fondo #020617 (Slate-950), Texto #22d3ee (Cyan-400)
+      */}
+      <motion.img
+        src="https://placehold.co/1920x1080/020617/22d3ee?text=AI+Automation+Background&font=montserrat&font_size=60"
+        alt="Hero Background AI Automation"
+        className="w-full h-full object-cover opacity-40 blur-[2px]"
+        loading="eager"
+        initial={{ scale: 1.1 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 1.5, ease: "easeOut" }}
+      />
+      
+      {/* Overlay de ruido sutil para textura premium */}
+      <div className="absolute inset-0 bg-[url('https://placehold.co/1920x1080/000000/ffffff?text=Noise')] opacity-[0.03] mix-blend-overlay pointer-events-none" />
+      
+      {/* Gradiente radial para suavizar los bordes y dar profundidad */}
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/40 to-slate-950/90" />
+    </div>
+  );
+};
+
+export default HeroBackground;
