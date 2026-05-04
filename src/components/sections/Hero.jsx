@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Zap, ShieldCheck, Cpu } from 'lucide-react';
+import HeroCarousel from '../ui/HeroCarousel';
 
 const Hero = () => {
   // Variants para animaciones de entrada
@@ -130,61 +131,39 @@ const Hero = () => {
           </div>
         </motion.div>
 
-        {/* Columna Derecha: Visual */}
         <motion.div 
           variants={itemVariants}
-          className="relative flex justify-center items-center"
+          className="relative flex justify-center items-center h-full min-h-[500px]"
         >
-          {/* Tarjeta de Glassmorphism Principal */}
-          <div className="relative w-full max-w-lg aspect-square bg-slate-950/40 backdrop-blur-3xl border border-white/10 rounded-[3rem] p-8 shadow-premium overflow-hidden group">
+          <div className="relative w-full max-w-lg aspect-square bg-slate-950/20 backdrop-blur-xl border border-white/5 rounded-[3rem] shadow-premium overflow-hidden group">
+            <HeroCarousel />
             
-            {/* Decoración interna */}
-            <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
-            
-            {/* Imagen Principal */}
-            <div className="absolute inset-4 rounded-[2.5rem] overflow-hidden bg-slate-900/50">
-               <img 
-                src="https://placehold.co/800x600/030712/38bdf8?text=VexoTry+Intelligence&font=montserrat" 
-                alt="VexoTry Intelligence" 
-                className="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-1000 ease-out"
-              />
-            </div>
-
-            {/* Overlay de datos flotantes (Glassmorphism) */}
-            <div className="absolute bottom-12 left-12 right-12 bg-slate-950/80 backdrop-blur-xl border border-white/10 rounded-[2rem] p-6 flex flex-col justify-between shadow-2xl">
+            {/* Overlay de datos flotantes (Optimizado) */}
+            <div className="absolute bottom-8 left-8 right-8 bg-slate-950/60 backdrop-blur-md border border-white/5 rounded-[2rem] p-6 flex flex-col justify-between shadow-2xl z-20">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-3">
                   <div className="p-2 bg-cyan-500/20 rounded-xl text-cyan-400">
                     <Zap size={18} />
                   </div>
-                  <span className="text-sm font-semibold text-slate-200">Eficiencia Operativa</span>
+                  <span className="text-sm font-semibold text-slate-200">Red Neuronal</span>
                 </div>
-                <span className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">+340%</span>
+                <span className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 tracking-tighter">+340%</span>
               </div>
               
               <div className="space-y-4">
-                <div className="h-2 w-full bg-white/5 rounded-full overflow-hidden">
+                <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
                   <motion.div 
                     initial={{ width: 0 }}
                     animate={{ width: "85%" }}
                     transition={{ duration: 1.5, delay: 1 }}
-                    className="h-full bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full shadow-[0_0_10px_rgba(6,182,212,0.5)]" 
-                  />
-                </div>
-                <div className="h-2 w-full bg-white/5 rounded-full overflow-hidden">
-                  <motion.div 
-                    initial={{ width: 0 }}
-                    animate={{ width: "60%" }}
-                    transition={{ duration: 1.5, delay: 1.2 }}
-                    className="h-full bg-slate-700 rounded-full" 
+                    className="h-full bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full" 
                   />
                 </div>
               </div>
             </div>
 
-            {/* Elemento flotante decorativo */}
-            <div className="absolute -top-20 -left-20 w-60 h-60 bg-cyan-500/10 rounded-full blur-[100px] animate-pulse" />
-            <div className="absolute -bottom-20 -right-20 w-60 h-60 bg-blue-500/10 rounded-full blur-[100px] animate-pulse" />
+            {/* Luces decorativas simplificadas para performance */}
+            <div className="absolute -top-10 -left-10 w-40 h-40 bg-cyan-500/10 rounded-full blur-[80px]" />
           </div>
         </motion.div>
       </motion.div>
