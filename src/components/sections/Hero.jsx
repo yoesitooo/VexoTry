@@ -103,24 +103,28 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-4">
-            <motion.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="group relative px-10 py-4 bg-white text-slate-950 font-bold rounded-full overflow-hidden shadow-[0_20px_40px_rgba(255,255,255,0.15)] hover:shadow-[0_25px_50px_rgba(255,255,255,0.25)] transition-all duration-500"
-            >
-              <span className="relative z-10 flex items-center gap-2">
-                Agendar Demo <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-300 to-blue-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            </motion.button>
+            <a href="#contact">
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="group relative px-10 py-4 bg-white text-slate-950 font-bold rounded-full overflow-hidden shadow-[0_20px_40px_rgba(255,255,255,0.15)] hover:shadow-[0_25px_50px_rgba(255,255,255,0.25)] transition-all duration-500"
+              >
+                <span className="relative z-10 flex items-center gap-2">
+                  Agendar Demo <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-300 to-blue-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              </motion.button>
+            </a>
 
-            <motion.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="px-10 py-4 bg-slate-900/30 border border-white/10 text-white font-medium rounded-full hover:bg-slate-800/50 transition-all backdrop-blur-sm"
-            >
-              Ver Casos de Éxito
-            </motion.button>
+            <a href="#technology">
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="px-10 py-4 bg-slate-900/30 border border-white/10 text-white font-medium rounded-full hover:bg-slate-800/50 transition-all backdrop-blur-sm"
+              >
+                Ver Arquitectura
+              </motion.button>
+            </a>
           </div>
 
           <div className="flex items-center justify-center lg:justify-start gap-6 pt-8 border-t border-white/5">

@@ -34,7 +34,8 @@ const ContactForm = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="bg-slate-900/40 backdrop-blur-xl border border-slate-800/50 rounded-3xl p-8 md:p-12 shadow-2xl shadow-black/50"
+          className="bg-slate-900/40 backdrop-blur-md border border-slate-800/50 rounded-3xl p-8 md:p-12 shadow-2xl shadow-black/50 will-change-transform"
+          style={{ transform: "translateZ(0)" }}
         >
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-3 tracking-tight">

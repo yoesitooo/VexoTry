@@ -6,81 +6,57 @@ const slides = [
   {
     id: 1,
     title: "Cerebro Digital",
-    video: "", // El usuario colocará el loop aquí
-    transition: "" // El usuario colocará la transición aquí
+    image: "/images/cerebro.jpg",
   },
   {
     id: 2,
+    title: "Flujo de Datos",
+    image: "/images/flujo-de-datos.jpg",
+  },
+  {
+    id: 3,
     title: "Terminal Cuántica",
-    video: "", // El usuario colocará el loop aquí
-    transition: "" // El usuario colocará la transición aquí
+    image: "/images/terminal-cuantica.jpg",
   }
 ];
 
 export const HeroCarousel = () => {
   const [current, setCurrent] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  const videoRef = useRef(null);
-  const transitionRef = useRef(null);
 
   const nextSlide = () => {
-    if (isTransitioning) return;
-    setIsTransitioning(true);
-    
-    // Play transition video
-    if (transitionRef.current) {
-      transitionRef.current.currentTime = 0;
-      transitionRef.current.play();
-    }
+    setCurrent((prev) => (prev + 1) % slides.length);
+  };
 
-    // Switch slide after transition time (e.g., 2 seconds)
-    setTimeout(() => {
-      setCurrent((prev) => (prev + 1) % slides.length);
-      setIsTransitioning(false);
-    }, 2000);
+  const prevSlide = () => {
+    setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
   return (
     <div className="relative w-full h-full">
-      {/* Main Loop Video */}
+      {/* Main Slide Image */}
       <AnimatePresence mode="wait">
         <motion.div
           key={slides[current].id}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: isTransitioning ? 0 : 1 }}
+          initial={{ opacity: 0, scale: 1.05 }}
+          animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.5 }}
-          className="absolute inset-0 will-change-opacity"
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="absolute inset-0 will-change-opacity will-change-transform"
         >
-          <video
-            ref={videoRef}
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="auto"
-            className="w-full h-full object-cover rounded-[2.5rem] will-change-transform"
-            src={slides[current].video}
+          <img
+            src={slides[current].image}
+            alt={slides[current].title}
+            className="w-full h-full object-cover rounded-[2.5rem]"
           />
+          {/* Subtle overlay to blend with the UI */}
+          <div className="absolute inset-0 bg-[#030712]/30 rounded-[2.5rem]" />
         </motion.div>
       </AnimatePresence>
-
-      {/* Transition Video Overlay */}
-      <div className={`absolute inset-0 z-10 transition-opacity duration-300 will-change-opacity ${isTransitioning ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-        <video
-          ref={transitionRef}
-          muted
-          playsInline
-          preload="auto"
-          className="w-full h-full object-cover rounded-[2.5rem] will-change-transform"
-          src={slides[current].transition}
-        />
-      </div>
 
       {/* Navigation Controls */}
       <div className="absolute inset-0 flex items-center justify-between px-4 z-30">
         <button 
-          onClick={nextSlide}
+          onClick={prevSlide}
           className="p-3 rounded-full bg-white/5 border border-white/10 text-white backdrop-blur-md hover:bg-white/20 transition-all"
         >
           <ChevronLeft size={24} />
@@ -94,9 +70,9 @@ export const HeroCarousel = () => {
       </div>
 
       {/* Slide Info Indicator */}
-      <div className="absolute top-8 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-slate-950/40 border border-white/10 backdrop-blur-md z-30">
+      <div className="absolute top-8 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-slate-950/60 border border-white/10 backdrop-blur-md z-30 shadow-lg">
         <span className="text-[10px] font-bold text-cyan-400 tracking-[0.2em] uppercase">
-          Modulo: {slides[current].title}
+          Módulo: {slides[current].title}
         </span>
       </div>
     </div>

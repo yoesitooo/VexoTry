@@ -50,9 +50,9 @@ export const Navbar = () => {
 
   const navLinks = [
     { name: 'Inicio', href: '#hero' },
-    { name: 'Soluciones', href: '#solutions' },
+    { name: 'Capacidades', href: '#solutions' },
     { name: 'Tecnología', href: '#technology' },
-    { name: 'Casos de Éxito', href: '#cases' },
+    { name: 'Contacto', href: '#contact' },
   ];
 
   return (
