@@ -103,7 +103,6 @@ const Services = () => {
           className="absolute bottom-0 right-1/4 w-[800px] h-[800px] rounded-full pointer-events-none" 
           style={{ background: "radial-gradient(circle, rgba(88,28,135,0.1) 0%, rgba(88,28,135,0) 70%)" }}
         />
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 brightness-100 contrast-150 mix-blend-overlay pointer-events-none"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
@@ -190,7 +189,7 @@ const Services = () => {
           <motion.div 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center gap-4 px-10 py-5 rounded-full bg-slate-900/30 border border-white/10 hover:bg-slate-800/50 hover:border-cyan-500/50 transition-all duration-500 cursor-pointer group backdrop-blur-xl"
+            className="inline-flex items-center gap-4 px-10 py-5 rounded-full bg-slate-900/30 border border-white/10 hover:bg-slate-800/50 hover:border-cyan-500/50 transition-all duration-500 cursor-pointer group backdrop-blur-md will-change-transform"
           >
             <span className="text-white font-semibold text-lg">Explorar todas las soluciones</span>
             <ArrowRight className="w-6 h-6 text-cyan-400 group-hover:translate-x-2 transition-transform duration-500" />

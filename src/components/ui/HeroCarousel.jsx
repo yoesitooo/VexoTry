@@ -6,14 +6,14 @@ const slides = [
   {
     id: 1,
     title: "Cerebro Digital",
-    video: "https://cdn.pixabay.com/video/2022/10/24/136195-763462967_large.mp4", // Loop 1
-    transition: "https://cdn.pixabay.com/video/2021/04/12/70881-537443831_large.mp4" // Transition 1-2
+    video: "", // El usuario colocará el loop aquí
+    transition: "" // El usuario colocará la transición aquí
   },
   {
     id: 2,
     title: "Terminal Cuántica",
-    video: "https://cdn.pixabay.com/video/2023/10/20/185856-876774641_large.mp4", // Loop 2
-    transition: "https://cdn.pixabay.com/video/2021/04/12/70881-537443831_large.mp4" // Transition 2-1
+    video: "", // El usuario colocará el loop aquí
+    transition: "" // El usuario colocará la transición aquí
   }
 ];
 
