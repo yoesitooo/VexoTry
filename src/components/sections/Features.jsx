@@ -159,7 +159,7 @@ const Features = () => {
               key={index}
               variants={itemVariants}
               whileHover={{ y: -8 }}
-              className="group relative bg-slate-950/40 backdrop-blur-3xl border border-white/5 p-10 rounded-[2.5rem] hover:border-cyan-500/30 transition-all duration-500 shadow-premium overflow-hidden"
+              className="group relative bg-slate-950/60 backdrop-blur-lg border border-white/5 p-10 rounded-[2.5rem] hover:border-cyan-500/30 transition-all duration-500 shadow-xl hover:shadow-premium overflow-hidden will-change-transform"
             >
               {/* Efecto de brillo dinámico */}
               <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />

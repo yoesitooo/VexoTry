@@ -93,11 +93,17 @@ const Services = () => {
 
   return (
     <section id="technology" className="relative py-32 overflow-hidden bg-[#030712]">
-      {/* Background Decorativo */}
+      {/* Background Decorativo - Optimizado */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-cyan-900/10 rounded-full blur-[120px]" />
-        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-purple-900/10 rounded-full blur-[120px]" />
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 brightness-100 contrast-150 mix-blend-overlay"></div>
+        <div 
+          className="absolute top-0 left-1/4 w-[800px] h-[800px] rounded-full pointer-events-none" 
+          style={{ background: "radial-gradient(circle, rgba(22,78,99,0.1) 0%, rgba(22,78,99,0) 70%)" }}
+        />
+        <div 
+          className="absolute bottom-0 right-1/4 w-[800px] h-[800px] rounded-full pointer-events-none" 
+          style={{ background: "radial-gradient(circle, rgba(88,28,135,0.1) 0%, rgba(88,28,135,0) 70%)" }}
+        />
+        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 brightness-100 contrast-150 mix-blend-overlay pointer-events-none"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
@@ -146,7 +152,7 @@ const Services = () => {
                 y: -10,
                 transition: { duration: 0.4, ease: "easeOut" }
               }}
-              className="group relative p-10 rounded-[2.5rem] bg-slate-950/40 backdrop-blur-3xl border border-white/5 hover:border-white/10 transition-all duration-700 shadow-premium overflow-hidden"
+              className="group relative p-10 rounded-[2.5rem] bg-slate-950/60 backdrop-blur-lg border border-white/5 hover:border-white/10 transition-all duration-500 shadow-xl hover:shadow-premium overflow-hidden will-change-transform"
             >
               {/* Glow Effect on Hover */}
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-gradient-to-br from-cyan-500/5 via-transparent to-blue-500/5 pointer-events-none" />

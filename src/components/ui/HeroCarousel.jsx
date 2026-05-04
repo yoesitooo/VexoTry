@@ -50,7 +50,7 @@ export const HeroCarousel = () => {
           animate={{ opacity: isTransitioning ? 0 : 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
-          className="absolute inset-0"
+          className="absolute inset-0 will-change-opacity"
         >
           <video
             ref={videoRef}
@@ -58,19 +58,21 @@ export const HeroCarousel = () => {
             loop
             muted
             playsInline
-            className="w-full h-full object-cover rounded-[2.5rem]"
+            preload="auto"
+            className="w-full h-full object-cover rounded-[2.5rem] will-change-transform"
             src={slides[current].video}
           />
         </motion.div>
       </AnimatePresence>
 
       {/* Transition Video Overlay */}
-      <div className={`absolute inset-0 z-10 transition-opacity duration-300 ${isTransitioning ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+      <div className={`absolute inset-0 z-10 transition-opacity duration-300 will-change-opacity ${isTransitioning ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
         <video
           ref={transitionRef}
           muted
           playsInline
-          className="w-full h-full object-cover rounded-[2.5rem]"
+          preload="auto"
+          className="w-full h-full object-cover rounded-[2.5rem] will-change-transform"
           src={slides[current].transition}
         />
       </div>

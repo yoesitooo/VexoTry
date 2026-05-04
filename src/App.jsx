@@ -11,10 +11,16 @@ import Reveal from './components/ui/Reveal';
 function App() {
   return (
     <div className="min-h-screen bg-[#030712] text-slate-100 font-sans selection:bg-cyan-500/30 selection:text-cyan-200 overflow-x-hidden">
-      {/* Background Ambient Effects */}
+      {/* Background Ambient Effects - Optimized */}
       <div className="fixed inset-0 z-0 pointer-events-none">
-        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-blue-600/5 rounded-full blur-[120px]" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-cyan-500/5 rounded-full blur-[100px]" />
+        <div 
+          className="absolute top-[-20%] left-[-10%] w-[1000px] h-[1000px] rounded-full mix-blend-screen"
+          style={{ background: "radial-gradient(circle, rgba(37,99,235,0.05) 0%, rgba(37,99,235,0) 70%)" }}
+        />
+        <div 
+          className="absolute bottom-[-20%] right-[-10%] w-[800px] h-[800px] rounded-full mix-blend-screen"
+          style={{ background: "radial-gradient(circle, rgba(6,182,212,0.05) 0%, rgba(6,182,212,0) 70%)" }}
+        />
       </div>
 
       <motion.div 

@@ -47,22 +47,28 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-[#030712]/20 via-transparent to-[#030712]" />
         <div className="absolute inset-0 bg-grid-pattern opacity-[0.05]" />
         
-        {/* Ambient Lights */}
+        {/* Ambient Lights - Optimized with radial gradients instead of heavy blur */}
         <motion.div 
           animate={{ 
-            scale: [1, 1.2, 1],
-            opacity: [0.1, 0.2, 0.1]
+            scale: [1, 1.1, 1],
+            opacity: [0.3, 0.5, 0.3]
           }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-[-10%] right-[-10%] w-[800px] h-[800px] bg-cyan-500/20 rounded-full blur-[150px]" 
+          style={{
+            background: "radial-gradient(circle, rgba(6,182,212,0.15) 0%, rgba(6,182,212,0) 70%)"
+          }}
+          className="absolute top-[-20%] right-[-10%] w-[800px] h-[800px] rounded-full mix-blend-screen pointer-events-none" 
         />
         <motion.div 
           animate={{ 
-            scale: [1.2, 1, 1.2],
-            opacity: [0.1, 0.2, 0.1]
+            scale: [1.1, 1, 1.1],
+            opacity: [0.3, 0.5, 0.3]
           }}
           transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute bottom-[-10%] left-[-10%] w-[800px] h-[800px] bg-blue-600/20 rounded-full blur-[150px]" 
+          style={{
+            background: "radial-gradient(circle, rgba(37,99,235,0.15) 0%, rgba(37,99,235,0) 70%)"
+          }}
+          className="absolute bottom-[-20%] left-[-10%] w-[800px] h-[800px] rounded-full mix-blend-screen pointer-events-none" 
         />
       </div>
 
@@ -163,7 +169,7 @@ const Hero = () => {
             </div>
 
             {/* Luces decorativas simplificadas para performance */}
-            <div className="absolute -top-10 -left-10 w-40 h-40 bg-cyan-500/10 rounded-full blur-[80px]" />
+            <div className="absolute -top-10 -left-10 w-60 h-60 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(6,182,212,0.15) 0%, rgba(6,182,212,0) 70%)" }} />
           </div>
         </motion.div>
       </motion.div>
