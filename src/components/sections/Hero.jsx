@@ -22,28 +22,28 @@ const Hero = () => {
       y: 0,
       opacity: 1,
       transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 12,
+        duration: 0.6,
+        ease: "easeOut",
       },
     },
   };
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#030712] text-white">
-      {/* Hypnotic Video Background */}
-      <div className="absolute inset-0 z-0">
+      {/* Local AI Video Background */}
+      <div className="absolute inset-0 z-0 bg-[#030712]">
         <video 
           autoPlay 
           loop 
           muted 
-          playsInline 
-          className="absolute inset-0 w-full h-full object-cover opacity-30 grayscale-[0.5] scale-110"
+          playsInline
+          preload="auto"
+          className="absolute inset-0 w-full h-full object-cover opacity-50 will-change-transform"
         >
-          <source src="https://cdn.pixabay.com/video/2023/10/20/185856-876774641_large.mp4" type="video/mp4" />
+          <source src="/videos/ai-loop.mp4" type="video/mp4" />
         </video>
         {/* Overlays for depth and glassmorphism */}
-        <div className="absolute inset-0 bg-[#030712]/60 backdrop-blur-[2px]" />
+        <div className="absolute inset-0 bg-[#030712]/50" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#030712]/20 via-transparent to-[#030712]" />
         <div className="absolute inset-0 bg-grid-pattern opacity-[0.05]" />
         
@@ -141,7 +141,7 @@ const Hero = () => {
           variants={itemVariants}
           className="relative flex justify-center items-center h-full min-h-[500px]"
         >
-          <div className="relative w-full max-w-lg aspect-square bg-slate-950/20 backdrop-blur-xl border border-white/5 rounded-[3rem] shadow-premium overflow-hidden group">
+          <div className="relative w-full max-w-lg aspect-square bg-slate-950/40 backdrop-blur-md border border-white/5 rounded-[3rem] shadow-premium overflow-hidden group will-change-transform" style={{ transform: "translateZ(0)" }}>
             <HeroCarousel />
             
             {/* Overlay de datos flotantes (Optimizado) */}
