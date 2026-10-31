@@ -8,6 +8,8 @@
 ![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?logo=framer&logoColor=white)
 ![Zod](https://img.shields.io/badge/React_Hook_Form_+_Zod-3E67B1?logo=zod&logoColor=white)
 
+**🔗 Live demo: [vexo-try.vercel.app](https://vexo-try.vercel.app)**
+
 > 🇪🇸 Landing de agencia de automatización con IA, en React + Vite + Tailwind + Framer Motion, con formulario validado (React Hook Form + Zod).
 
 ## Highlights
